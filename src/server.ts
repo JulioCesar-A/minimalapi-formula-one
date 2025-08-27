@@ -1,3 +1,12 @@
+import Fastify from 'fastify';
+
+const server = Fastify({
+    logger: true,
+
+});
+
+const portServer = process.env.PORT;
+
 interface DriverParams {
     id: string
 }
@@ -23,3 +32,6 @@ const drivers = [
   { id: 2, name: "Lando Norris", team: "McLaren" },    
 ];
 
+server.listen({port: Number(portServer)}, () => {
+    console.log("Server init"); 
+});
