@@ -87,7 +87,7 @@ server.get<{ Params: DriverParams }>('/drivers/:id', async(request, response) =>
         response.type('application/json').code(404);
         return { message : "Driver Not Found"}
     } else {
-        response.type('application/json').code(404);
+        response.type('application/json').code(200);
         return { driver }
     }
 });
